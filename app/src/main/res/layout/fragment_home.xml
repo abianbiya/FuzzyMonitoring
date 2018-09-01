@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context=".HomeFragment"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo"
+            android:layout_below="@id/toolbar"
+            android:layout_marginTop="100dp"
+            android:id="@+id/iv_sapi"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/tv_title"
+            android:layout_centerVertical="true"
+            android:textAlignment="center"
+            android:padding="16dp"
+            android:text="Sistem Monitoring Budidaya Ikan Lele dengan Teknik Bioflok"
+            android:layout_below="@id/iv_sapi"
+            android:fontFamily="cursive"
+            android:textSize="22sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Meri Riana | 54323456765 \n Pendidikan Teknik Elektro"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:fontFamily="cursive"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:textAlignment="center"/>
+
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:id="@+id/btn_perhitungan"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            android:textColor="@color/text_darker_gray"
+            android:text="Lihat Data"
+            android:background="@drawable/bg_rounded_blue"/>
+    </RelativeLayout>
+
+</FrameLayout>

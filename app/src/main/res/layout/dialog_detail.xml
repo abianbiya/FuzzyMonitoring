@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kode"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:id="@+id/tv_kode"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_kodenya"
+        android:layout_below="@id/tv_kode"
+        android:text="P001"
+        android:textSize="16sp"
+        android:layout_marginBottom="16sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Umur"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:id="@+id/tv_umur"
+        android:layout_below="@id/tv_kodenya"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_umurnya"
+        android:layout_below="@id/tv_umur"
+        android:text="33 Bulan"
+        android:textSize="16sp"
+        android:layout_marginBottom="16sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bobot"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:id="@+id/tv_bobot"
+        android:layout_below="@id/tv_umurnya"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_bobotnya"
+        android:layout_below="@id/tv_bobot"
+        android:text="300 Kg"
+        android:textSize="16sp"
+        android:layout_marginBottom="16sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BCS"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:id="@+id/tv_bcs"
+        android:layout_below="@id/tv_bobotnya"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_bcsnya"
+        android:layout_below="@id/tv_bcs"
+        android:text="3.3"
+        android:textSize="16sp"
+        android:layout_marginBottom="16sp"/>
+
+
+</RelativeLayout>

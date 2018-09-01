@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_item_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_blue"
+        android:paddingTop="5dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="8dp"
+            android:textSize="13sp"
+            android:text="Nama"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_margin="8dp"
+            android:background="@color/text_darker_gray"
+            android:layout_below="@id/tv_nama"/>
+
+        <TextView
+            android:id="@+id/tv_nama_peternak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/divider"/>
+
+        <TextView
+            android:id="@+id/tv_datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="8dp"
+            android:textSize="13sp"
+            android:text="No. Registrasi"/>
+
+        <TextView
+        android:id="@+id/tv_no_reg_peternak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/divider"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_detail"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_rounded_blue"
+        android:text="Detail"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_gravity="bottom|center"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" />
+
+</FrameLayout>
