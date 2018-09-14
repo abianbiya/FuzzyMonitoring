@@ -15,10 +15,13 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.gson.Gson;
 
@@ -111,7 +114,7 @@ public class HistoryFragment extends Fragment {
 
         recyclerView.setLayoutManager(layoutManager);
 
-        chart = (LineChart) v.findViewById(R.id.chart);
+        chart =  v.findViewById(R.id.chart);
 
         entries = new ArrayList<Entry>();
         entries2 = new ArrayList<Entry>();
@@ -154,6 +157,7 @@ public class HistoryFragment extends Fragment {
                             LineDataSet dataSet = new LineDataSet(entries, "Suhu");
                             dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
                             dataSet.setColor(R.color.blue_dark);
+
                             LineDataSet dataSet2 = new LineDataSet(entries2, "pH");
                             dataSet2.setAxisDependency(YAxis.AxisDependency.LEFT);
                             dataSet2.setColor(R.color.orange);
@@ -164,6 +168,14 @@ public class HistoryFragment extends Fragment {
 
                             LineData lineData = new LineData(dataSets);
                             chart.setData(lineData);
+                            chart.setX(1);
+                            XAxis axis = chart.getXAxis();
+                            axis.setValueFormatter(new IAxisValueFormatter() {
+                                @Override
+                                public String getFormattedValue(float value, AxisBase axis) {
+                                    return String.valueOf(Math.round(value));
+                                }
+                            });
                             chart.invalidate();
                             adapter = new DataAdapter(getContext(), dataList);
                             recyclerView.setAdapter(adapter);

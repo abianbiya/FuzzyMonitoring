@@ -17,13 +17,22 @@
         android:layout_marginBottom="50dp"
         android:elevation="30dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btn_hitung"
+        android:id="@+id/timestamp"
+        android:text="Selasa, 22 Oktober 2018 pukul 13.30 WIB"
+        android:textSize="14sp"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp"
+        android:padding="16dp"
         android:layout_margin="16dp"
         android:background="@drawable/bg_rounded_white_small"
-        android:layout_below="@id/btn_hitung">
+        android:layout_below="@id/timestamp">
         
         <TextView
             android:layout_width="wrap_content"
@@ -32,13 +41,23 @@
             android:textSize="14sp"
             android:text="pH"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/ph"
+            android:layout_alignParentRight="true"
+            android:text="7"
+            android:id="@+id/val_ph"
+            android:textSize="14sp"/>
+
         <ProgressBar
             android:id="@+id/prog_ph"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:min="0"
             android:progressBackgroundTint="@color/colorPrimary"
-            android:progressTint="@color/colorPrimaryDark"
+            android:progressTint="@android:color/holo_blue_light"
             android:layout_below="@id/ph"
             android:progress="50"/>
 
@@ -51,14 +70,24 @@
             android:layout_below="@id/prog_ph"
             android:text="Suhu"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/suhu"
+            android:layout_alignParentRight="true"
+            android:text="30"
+            android:id="@+id/val_suhu"
+            android:textSize="14sp"/>
+
         <ProgressBar
             android:id="@+id/prog_suhu"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:progressBackgroundTint="@color/colorPrimary"
-            android:progressTint="@color/colorPrimaryDark"
+            android:progressTint="@android:color/holo_blue_light"
             android:layout_height="wrap_content"
             android:layout_below="@id/suhu"
+            android:min="22"
             android:progress="50"/>
         
         <TextView
@@ -72,13 +101,17 @@
             />
         
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_rounded_blue"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:text="STABIL"
+            android:padding="8dp"
+            android:id="@+id/val_simpulan"
             android:layout_centerHorizontal="true"
-            android:textAlignment="center"
             android:layout_below="@id/kesimpulan"
-            android:textSize="18sp"/>
+            android:textSize="16sp"/>
 
     </RelativeLayout>
 

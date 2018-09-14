@@ -23,9 +23,9 @@ public interface APIInterface {
     //-----------------peternak-----------------------
 
     @GET("api.php")
-    Call<ResponseBody> listData();
+    Call<ResponseBody> dataSatuan();
 
     @GET("api2.php")
-    Call<ResponseBody> dataSatuan();
+    Call<ResponseBody> listData();
 
 }

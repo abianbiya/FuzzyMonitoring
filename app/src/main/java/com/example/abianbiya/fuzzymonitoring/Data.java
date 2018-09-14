@@ -14,6 +14,12 @@ public class Data {
     @SerializedName("ph")
     @Expose
     private String ph;
+    @SerializedName("hasil")
+    @Expose
+    private String hasil;
+    @SerializedName("kesimpulan")
+    @Expose
+    private String kesimpulan;
     @SerializedName("ip")
     @Expose
     private String ip;
@@ -46,6 +52,22 @@ public class Data {
 
     public void setPh(String ph) {
         this.ph = ph;
+    }
+
+    public String getHasil() {
+        return hasil;
+    }
+
+    public void setHasil(String hasil) {
+        this.hasil = hasil;
+    }
+
+    public String getKesimpulan() {
+        return kesimpulan;
+    }
+
+    public void setKesimpulan(String kesimpulan) {
+        this.kesimpulan = kesimpulan;
     }
 
     public String getIp() {
