@@ -29,6 +29,9 @@ public class Data {
     @SerializedName("date_time")
     @Expose
     private String dateTime;
+    @SerializedName("tgl")
+    @Expose
+    private String tgl;
 
     public String getId() {
         return id;
@@ -92,6 +95,14 @@ public class Data {
 
     public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
+    }
+
+    public String getTgl() {
+        return tgl;
+    }
+
+    public void setTgl(String tgl) {
+        this.tgl = tgl;
     }
 
 }

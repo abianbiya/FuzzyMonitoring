@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
@@ -23,6 +24,7 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -115,6 +117,9 @@ public class HistoryFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         chart =  v.findViewById(R.id.chart);
+        Description des = new Description();
+        des.setText("Grafik Monitoring");
+        chart.setDescription(des);
 
         entries = new ArrayList<Entry>();
         entries2 = new ArrayList<Entry>();
@@ -156,11 +161,17 @@ public class HistoryFragment extends Fragment {
 
                             LineDataSet dataSet = new LineDataSet(entries, "Suhu");
                             dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
-                            dataSet.setColor(R.color.blue_dark);
+                            dataSet.setColor(getResources().getColor(android.R.color.black));
+//                            dataSet.setColors(ColorTemplate.PASTEL_COLORS);
+                            dataSet.setCircleColor(getResources().getColor(android.R.color.black));
+//                            dataSet.setDrawCircleHole(false);
 
                             LineDataSet dataSet2 = new LineDataSet(entries2, "pH");
                             dataSet2.setAxisDependency(YAxis.AxisDependency.LEFT);
-                            dataSet2.setColor(R.color.orange);
+                            dataSet2.setColor(getResources().getColor(android.R.color.holo_red_light));
+//                            dataSet2.setColors(ColorTemplate.MATERIAL_COLORS);
+                            dataSet2.setCircleColor(getResources().getColor(android.R.color.holo_red_light));
+
 
                             List<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
                             dataSets.add(dataSet);
@@ -169,11 +180,12 @@ public class HistoryFragment extends Fragment {
                             LineData lineData = new LineData(dataSets);
                             chart.setData(lineData);
                             chart.setX(1);
-                            XAxis axis = chart.getXAxis();
+                            final XAxis axis = chart.getXAxis();
+
                             axis.setValueFormatter(new IAxisValueFormatter() {
                                 @Override
-                                public String getFormattedValue(float value, AxisBase axis) {
-                                    return String.valueOf(Math.round(value));
+                                public String getFormattedValue(float value, AxisBase axiss) {
+                                    return dataList.get(Math.round(value)).getTgl();
                                 }
                             });
                             chart.invalidate();
